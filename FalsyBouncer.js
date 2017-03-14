@@ -1,14 +1,19 @@
 function bouncer(arr) {
-  // Don't show a false ID to this bouncer.
-  return arr;
+  return arr.filter(Boolean);
 }
 
-bouncer([7, "ate", "", false, 9]);
 
+/* Needs Work
+function bouncer(arr) {
+
+  arr = arr.filter(function (n) {
+    return (n !== undefined || null || false || 0  || "" || isNaN); });
+    return arr;
+}
+*/
 
 
 /*
-
 Remove all falsy values from an array.
 
 Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
