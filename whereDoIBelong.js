@@ -2,13 +2,17 @@
 function getIndexToIns(arr, num) {
   // Find my place in this sorted array.
 
-  
+  var fullArr = arr.push(num);
+  var sortArr = fullArr.sort();
 
-  return num;
+  return sortArr.indexOf(num);
 }
 
 getIndexToIns([40, 60], 50);
 
+
+
+// store initial number, sort, find index of number
 
 
 /*
