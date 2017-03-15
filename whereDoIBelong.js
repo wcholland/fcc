@@ -1,16 +1,26 @@
 
 function getIndexToIns(arr, num) {
   // Find my place in this sorted array.
+  function sortNumber (a,b) {
+    return a-b;
+  }  // This tells the sort method to not sort by string, but numerically
 
-  var fullArr = arr.push(num);
-  var sortArr = fullArr.sort();
+  arr.push(num);
+  arr.sort(sortNumber);
+  var answer = arr.indexOf(num);
 
-  return sortArr.indexOf(num);
+  return answer;
 }
 
 getIndexToIns([40, 60], 50);
 
 
+// slightly cleaner online edition
+function getIndexToIns(arr, num) {
+  arr.push(num);
+  arr.sort(function(a, b){return a-b;});
+  return arr.indexOf(num);
+}
 
 // store initial number, sort, find index of number
 
