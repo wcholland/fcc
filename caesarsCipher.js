@@ -1,26 +1,49 @@
-function rot13(str) { // LBH QVQ VG!
-
-  var converted = "";
-
-  for (var i = 0; i < str.length; i++) {
-    console.log(str.charCodeAt(i));
-    var temp = str.charCodeAt(i) - 13;
-    console.log(temp);
-
-    if (temp < 65) {
-      temp + 26;
-    }
-
-    var temp2 = String.fromCharCode(temp);
-    console.log(temp2);
-    converted += temp2;
-
-
-  }
-
-  console.log(converted);
-
+function rot13(str) {
+  // Split str into a character array
+  return str.split('').map.call(str, function(d) {
+      // Convert char to a character code
+      x = d.charCodeAt(0);
+      // Checks if character lies between A-Z
+      if (x < 65 || x > 90) {
+        return String.fromCharCode(x);  // Return un-converted character
+      }
+      //N = ASCII 78, if the character code is less than 78, shift forward 13 places
+      else if (x < 78) {
+        return String.fromCharCode(x + 13);
+      }
+      // Otherwise shift the character 13 places backward
+      return String.fromCharCode(x - 13);
+    }).join('');  // Rejoin the array into a string
 }
+
+
+// ASCII 65 - 90 are letters
+// split string, iterate over each using map/call, convert to char char code
+// check if <65 || >90, then return string, if less than 78, + 13, otherwise
+// - 13, then join
+
+
+
+// function rot13(str) { // LBH QVQ VG!
+//
+//   var converted = "";
+//
+//   for (var i = 0; i < str.length; i++) {
+//     console.log(str.charCodeAt(i));
+//     var temp = str.charCodeAt(i) - 13;
+//     console.log(temp);
+//
+//     if (temp < 65) {
+//       temp + 26;
+//     }
+//
+//     var temp2 = String.fromCharCode(temp);
+//     console.log(temp2);
+//     converted += temp2;
+//
+//   }
+//   console.log(converted);
+// }
 
 
 // ASCII 65 - 90 are letters
